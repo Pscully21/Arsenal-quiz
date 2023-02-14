@@ -71,9 +71,9 @@ var optionB = document.getElementById("b");
 var optionC = document.getElementById("c");
 var optionD = document.getElementById("d");
 
-function startQuiz() {
+function showQuiz() {
     quizContainer.style.display = "block";
-    var quizInfo = quizData[currentQuiz];
+    var quizInfo = quizQuestions[currentQuiz];
     questionEl.innerText = quizInfo.question;
     optionA.innerText = quizInfo.a;
     optionB.innerText = quizInfo.b;
@@ -93,7 +93,7 @@ function questionResult() {
 
     currentQuiz++;
     if (currentQuiz < quizData.length) {
-        startQuiz();
+        showQuiz();
     } else {
         showScore();
     }
