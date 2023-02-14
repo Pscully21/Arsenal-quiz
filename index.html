@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Arsenal/JS quiz</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Welcome to my Arsenal/JS quiz!</h1>
+        <!--highscore button or container here-->
+        <h2>Time Left<span id="timer"></span></h2>
+    </header>
+    <div class="container">
+        <div class="containerEl" id="welcome-box">
+            <h2>5 Question Quiz</h2>
+            <p>
+                There will be 4 Arsenal related questions in the following quiz with one JavaScript question at the end if you can get to it! Incorrect answers will result in a ten second penalty. Good Luck!!!
+            </p>
+            <button class="btn" id="start-button">Start</button>
+        </div>
+        <div class="containerEl" id="quiz-container">
+            <h3 id="question"></h3>
+            <button id="a">a</button>
+            <button id="b">b</button>
+            <button id="c">c</button>
+            <button id="d">d</button>
+            <p id="answer"></p>
+        </div>
+
+    </div>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
