@@ -9,15 +9,15 @@ var timeRemaining = 40;
 function beginQuiz() {
     showQuiz();
     var timeInterval = setInterval(function () {
-        if (timeLeft > 0) {
-            timerEl.textContent = ": " + timeLeft + "seconds";
-            timeLeft--;
+        if (timeRemaining > 0) {
+            timerEl.textContent = ": " + timeRemaining + "seconds";
+            timeRemaining--;
         } else {
             timerEl.textContent = "";
             clearInterval(timeInterval);
             showScore();
         }
-    }, 2000);
+    }, 1000);
 }
 startButton.addEventListener("click", beginQuiz);
 //questions
@@ -73,6 +73,7 @@ var optionD = document.getElementById("d");
 
 function showQuiz() {
     quizContainer.style.display = "block";
+    welcomeBox.style.display = "none";
     var quizInfo = quizQuestions[currentQuiz];
     questionEl.innerText = quizInfo.question;
     optionA.innerText = quizInfo.a;
@@ -80,10 +81,12 @@ function showQuiz() {
     optionC.innerText = quizInfo.c;
     optionD.innerText = quizInfo.d;
 }
+
 var currentQuiz = 0;
 var score = 0;
+
 function questionResult() {
-    if(quizData[currentQuiz].correctAns === this.id) {
+    if (quizQuestions[currentQuiz].correctAns === this.id) {
         answerEl.textContent = "Nice Job! You're Correct!";
         score += 10;
     } else {
@@ -92,10 +95,72 @@ function questionResult() {
     }
 
     currentQuiz++;
-    if (currentQuiz < quizData.length) {
+    if (currentQuiz < quizQuestions.length) {
         showQuiz();
     } else {
         showScore();
     }
 }
-optionA.addEventListener("click", startQuiz)
+//event listener code
+optionA.addEventListener("click", questionResult);
+optionB.addEventListener("click", questionResult);
+optionC.addEventListener("click", questionResult);
+optionD.addEventListener("click", questionResult);
+//declare score vaiables
+var nameEl = document.getElementById("name");
+var finishEl = document.getElementById("finish");
+var scoreContainer = document.getElementById("score-container");
+var scoreEl = document.getElementById("score");
+
+function showScore() {
+    scoreContainer.style.display = "none";
+    quizContainer.style.display = "none";
+    scoreEl.textContent = score;
+};
+
+// tell user to register a name to keep track of score
+finishEl.addEventListener("click", function registerName() {
+    if (nameEl.value === "") {
+        window.alert("You must submit a name");
+    } else {
+        var highScore = {
+            username: nameEl.value,
+            score: score,
+        };
+        var hsData = JSON.parse(localStorage.getItem("hsData")) || [];
+        hsData.push(highScore);
+        localStorage.setItem("hsData", JSON.stringify(hsData));
+        //function that shows all highscore data
+        renderHighScores();
+    }
+});
+
+var highScoreContainer = document.getElementById("high-score-container");
+var highScoreList = document.getElementById("high-score-list");
+var showHighScore = document.getElementById("show-high-score");
+var backEl = document.getElementById("back");
+//showing high scores
+function renderHighScores() {
+    highScoreContainer.style.display = "block";
+    scoreContainer.style.display = "none";
+    quizContainer.style.display = "none";
+    welcomeBox.style.display = "none";
+    answerEl.style.display = "none";
+    highScoreList.innerHTML = "";
+    
+    var savedHighScores = JSON.parse(localStorage.getItem("hsData")) || [];
+    
+    for (var i = 0; i < savedHighScores.length; i++) {
+        var scoresList = document.createElement("li");
+        scoresList.textContent = savedHighScores[i].initial + "-" + savedHighScores[i].score;
+
+        highScoreList.appendChild(scoresList);
+    }
+}
+
+showHighScore.addEventListener("click", renderHighScores);
+
+//return to main page
+backEl.addEventListener("click", function () {
+    location.reload
+});

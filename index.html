@@ -11,6 +11,7 @@
     <header>
         <h1>Welcome to my Arsenal/JS quiz!</h1>
         <!--highscore button or container here-->
+        <button id="show-high-score">High Scores</button>
         <h2>Time Left<span id="timer"></span></h2>
     </header>
     <div class="container">
@@ -22,12 +23,28 @@
             <button class="btn" id="start-button">Start</button>
         </div>
         <div class="containerEl" id="quiz-container">
-            <h3 id="question"></h3>
+            <h3 id="question">Text</h3>
             <button id="a">a</button>
             <button id="b">b</button>
             <button id="c">c</button>
             <button id="d">d</button>
             <p id="answer"></p>
+        </div>
+        <div class="box" id="high-score-container">
+            <h4>Finished!</h4>
+            <p>You finished with a score of <span id="score"></span></p>
+            <form>
+                <label for="name">Enter a Name</label>
+                <input type="text" name="name" id="name">
+            </form>
+            <button class="btn" id="finish">Finish</button>
+        </div>
+        <div class="box" id="high-score-container">
+            <h4>High Scores</h4>
+            <ol id="high-score-list"></ol>
+            <div>
+                <button class="btn" id="back">Homepage</button>
+            </div>
         </div>
 
     </div>
