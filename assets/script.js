@@ -113,7 +113,7 @@ var scoreContainer = document.getElementById("score-container");
 var scoreEl = document.getElementById("score");
 
 function showScore() {
-    scoreContainer.style.display = "none";
+    scoreContainer.style.display = "block";
     quizContainer.style.display = "none";
     scoreEl.textContent = score;
 };
@@ -152,7 +152,7 @@ function renderHighScores() {
     
     for (var i = 0; i < savedHighScores.length; i++) {
         var scoresList = document.createElement("li");
-        scoresList.textContent = savedHighScores[i].initial + "-" + savedHighScores[i].score;
+        scoresList.textContent = savedHighScores[i].username + "-" + savedHighScores[i].score;
 
         highScoreList.appendChild(scoresList);
     }
@@ -162,5 +162,5 @@ showHighScore.addEventListener("click", renderHighScores);
 
 //return to main page
 backEl.addEventListener("click", function () {
-    location.reload
+    location.reload();
 });

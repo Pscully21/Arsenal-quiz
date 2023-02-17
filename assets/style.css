@@ -14,7 +14,7 @@ header {
 
 }
 header h1 {
-    font-size: 22px;
+    font-size: 45px;
     font-weight: bold;
     font-style: italic;
     display: flex;
@@ -26,6 +26,23 @@ header h1 {
 #show-high-score {
     font-size: 20px;
 }
+.btn {
+    border-color: darkred;
+    background-color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 20px 20px 20px 20px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 30px;
+
+}
+p {
+    font-size: 20px;
+}
+h3 {
+    font-size: 30px;
+}
 #high-score-container {
     display: none;
 }
@@ -36,4 +53,17 @@ header h1 {
 
 #score-container {
     display: none;
+}
+#score-container form,
+#score-container button {
+    font-size: 30px;
+}
+#a,
+#b,
+#c,
+#d {
+    justify-content: center;
+    font-size: 25px;
+    background-color: white;
+    margin: 10px;
 }
