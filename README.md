@@ -14,6 +14,5 @@ This quiz was built using the following technologies
 
 ## License 
 This repo uses the MIT license
-![2022-10-04](https://user-images.githubusercontent.com/113151411/193744661-60ede0fe-3ed1-47b7-af12-323c95a9ebd5.png)
 
 link to pages
