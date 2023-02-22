@@ -13,7 +13,6 @@ This quiz was built using the following technologies
 - JavaScript
 - HTML
 - CSS
-##Screenshots 
 
 ## License 
 This repo uses the MIT license
