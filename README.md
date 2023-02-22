@@ -1,5 +1,8 @@
 # Arsenal / JS Quiz
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+## Screenshots
+![screenshot](/assets/images/home.png)
+![screenshot](/assets/images/finished.png)
 
 ## Description
 
