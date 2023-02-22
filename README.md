@@ -18,4 +18,5 @@ This quiz was built using the following technologies
 ## License 
 This repo uses the MIT license
 
-link to pages
+link to page
+https://pscully21.github.io/Arsenal-quiz/
